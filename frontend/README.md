@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Accredian Enterprise — Clone + Beyond
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React + Tailwind recreation of the Accredian Enterprise landing page, plus **5 unique interactive features** that go far beyond a typical clone.
 
-## Available Scripts
+> Reference: https://enterprise.accredian.com/
 
-In the project directory, you can run:
+## Tech Stack
+- React 19 (Create React App / CRACO)
+- Tailwind CSS + shadcn/ui primitives
+- lucide-react icons, Poppins font
+- React Router, frontend-only (data in `src/mock/mock.js`)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Core Clone
+Sticky nav, hero with checklist, animated stat counters, partner-logo marquee, Accredian Edge USPs, 7-domain expertise grid, 4-card course segmentation, "Who Should Join" banner, CAT framework, 3-step delivery, FAQs with category tabs, testimonials carousel, contact CTA, full footer, validated lead-capture modal.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Unique Beyond-Clone Features
+1. **AI Skill Assessment Quiz** — 5-step quiz recommending a training track.
+2. **Training ROI Calculator** — Live sliders → investment, ROI %, payback months (INR).
+3. **Program Comparison Tool** — Compare up to 3 programs side-by-side.
+4. **Learning Path Builder** — Drag-and-drop modules, live timeline, save to localStorage.
+5. **Polish** — Scroll-progress bar, dark-mode toggle, animated counters, full mobile responsiveness.
 
-### `npm test`
+## Project Structure
+```
+frontend/src/
+├── App.js, App.css, index.css
+├── pages/Home.jsx
+├── context/ThemeContext.jsx
+├── mock/mock.js
+└── components/
+    ├── Navbar, Hero, Stats, AnimatedCounter
+    ├── Partnerships, AccredianEdge, DomainExpertise, CourseSegmentation
+    ├── SkillAssessmentQuiz            (unique)
+    ├── WhoShouldJoin
+    ├── ROICalculator                  (unique)
+    ├── CATFramework
+    ├── LearningPathBuilder            (unique)
+    ├── HowWeDeliver
+    ├── ProgramComparison              (unique)
+    ├── FAQs, Testimonials, ContactCTA, Footer
+    ├── LeadCaptureModal
+    ├── ScrollProgressBar, ThemeToggle (polish)
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup
+```bash
+cd frontend
+yarn install
+yarn start
+```
+Runs at `http://localhost:3000`.
 
-### `npm run build`
+## Approach
+1. Analyzed reference site (layout, palette, type scale, motion).
+2. Small, reusable, single-responsibility components (<300 LOC each).
+3. All copy & data in `mock/mock.js` so a backend swap is trivial.
+4. Added 5 interactive features demonstrating product thinking (quiz → onboarding, ROI → CFO persona, compare → decision support, path builder → personalization).
+5. Responsive with Tailwind breakpoints; dark mode via `dark:` classes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## AI Usage
+- **Claude (Anthropic)**: scaffolding, architecture, interaction design for the 5 unique features, Tailwind conventions.
+- **Manual improvements**:
+  - Tuned hero, CAT framework and ROI result-card aesthetics.
+  - Added scroll-progress bar and animated counters (not in reference site).
+  - Designed quiz recommendation logic and the ROI formula
+    (productivity value + retention savings − investment).
+  - Restructured navigation to badge unique features as "New".
+  - Polished color contrast, hover transitions, spacing.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Improvements with more time
+- Wire lead capture & path-builder saves to FastAPI + MongoDB.
+- Persist quiz results and recommend nuanced program bundles server-side.
+- Replace text logo placeholders with real SVG brand marks via CMS.
+- Full i18n, WCAG AA audit, Playwright e2e tests.
+- Framer Motion reveal animations for sections.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+Built as an assignment showcase — not affiliated with Accredian.

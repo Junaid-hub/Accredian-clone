@@ -3,13 +3,13 @@
 
 export const navLinks = [
   { label: 'Home', href: '#home' },
-  { label: 'Stats', href: '#stats' },
   { label: 'Clients', href: '#clients' },
-  { label: 'Accredian Edge', href: '#edge' },
-  { label: 'CAT', href: '#cat' },
-  { label: 'How It Works', href: '#how' },
+  { label: 'Edge', href: '#edge' },
+  { label: 'Quiz', href: '#quiz', badge: 'New' },
+  { label: 'ROI', href: '#roi', badge: 'New' },
+  { label: 'Path Builder', href: '#path', badge: 'New' },
+  { label: 'Compare', href: '#compare', badge: 'New' },
   { label: 'FAQs', href: '#faqs' },
-  { label: 'Testimonials', href: '#testimonials' },
 ];
 
 export const heroBullets = [
@@ -150,6 +150,181 @@ export const testimonials = [
     color: '#0057A3',
     quote: 'Choosing Accredian for the learning & development of our employees was a beneficial decision. The value derived from the course is immense & their support team is always there to help our employees.',
   },
+];
+
+// ===== Unique Features Mock Data =====
+
+// 1. AI Skill Assessment Quiz
+export const quizQuestions = [
+  {
+    id: 'role',
+    question: 'What best describes your current role?',
+    options: [
+      { value: 'individual', label: 'Individual Contributor' },
+      { value: 'manager', label: 'Manager / Team Lead' },
+      { value: 'director', label: 'Director / VP' },
+      { value: 'cxo', label: 'C-Suite Executive' },
+    ],
+  },
+  {
+    id: 'focus',
+    question: 'Which area do you most want to grow in?',
+    options: [
+      { value: 'tech', label: 'Tech & Data' },
+      { value: 'leadership', label: 'Leadership & People Management' },
+      { value: 'product', label: 'Product & Innovation' },
+      { value: 'ai', label: 'Generative AI & Automation' },
+    ],
+  },
+  {
+    id: 'experience',
+    question: 'How many years of professional experience do you have?',
+    options: [
+      { value: '0-2', label: '0 – 2 years' },
+      { value: '3-5', label: '3 – 5 years' },
+      { value: '6-10', label: '6 – 10 years' },
+      { value: '10+', label: '10+ years' },
+    ],
+  },
+  {
+    id: 'style',
+    question: 'Preferred learning style?',
+    options: [
+      { value: 'live', label: 'Live cohort-based classes' },
+      { value: 'self', label: 'Self-paced on demand' },
+      { value: 'hybrid', label: 'Hybrid mix' },
+      { value: 'workshop', label: 'Intensive workshops' },
+    ],
+  },
+  {
+    id: 'goal',
+    question: 'What is your primary goal?',
+    options: [
+      { value: 'promotion', label: 'Get promoted' },
+      { value: 'switch', label: 'Switch domains / careers' },
+      { value: 'skill', label: 'Sharpen existing skills' },
+      { value: 'team', label: 'Upskill my team' },
+    ],
+  },
+];
+
+// Recommendation map based on dominant answer keys
+export const quizRecommendations = {
+  tech: {
+    domain: 'Tech & Data Insights',
+    desc: 'Master data science, analytics, cloud, and engineering fundamentals that power modern enterprises.',
+    programs: ['Data Science Bootcamp', 'Cloud Architecture', 'Advanced Analytics'],
+  },
+  leadership: {
+    domain: 'Leadership Elevation',
+    desc: 'Build strategic thinking, people management, and executive presence to lead high-performing teams.',
+    programs: ['Executive Leadership', 'People Manager Academy', 'Strategic Decision Making'],
+  },
+  product: {
+    domain: 'Product & Innovation Hub',
+    desc: 'Learn product thinking, discovery, roadmapping, and innovation frameworks used at top companies.',
+    programs: ['Product Management Pro', 'Design Thinking Lab', 'Product Strategy'],
+  },
+  ai: {
+    domain: 'Gen-AI Mastery',
+    desc: 'Hands-on training in LLMs, prompt engineering, agentic AI, and building AI-first products.',
+    programs: ['Gen-AI Fundamentals', 'Prompt Engineering', 'Building AI Agents'],
+  },
+};
+
+// 2. ROI Calculator defaults
+export const roiDefaults = {
+  teamSize: 25,
+  avgSalary: 1200000, // INR per year
+  programCost: 45000, // INR per person
+  productivityGainPct: 18,
+  retentionGainPct: 12,
+};
+
+// 3. Program Comparison
+export const programCatalog = [
+  {
+    id: 'p1',
+    name: 'Executive Leadership Program',
+    domain: 'Leadership',
+    duration: '16 weeks',
+    format: 'Hybrid',
+    level: 'Senior',
+    price: '₹1,20,000',
+    outcomes: ['Strategic thinking', 'Change management', 'Exec presence'],
+    rating: 4.8,
+  },
+  {
+    id: 'p2',
+    name: 'Data Science Bootcamp',
+    domain: 'Tech & Data',
+    duration: '24 weeks',
+    format: 'Live Online',
+    level: 'Intermediate',
+    price: '₹95,000',
+    outcomes: ['Python & ML', 'Statistics', 'End-to-end projects'],
+    rating: 4.7,
+  },
+  {
+    id: 'p3',
+    name: 'Gen-AI Mastery',
+    domain: 'AI',
+    duration: '12 weeks',
+    format: 'Self-paced',
+    level: 'Intermediate',
+    price: '₹65,000',
+    outcomes: ['LLM fundamentals', 'Prompt design', 'Agentic workflows'],
+    rating: 4.9,
+  },
+  {
+    id: 'p4',
+    name: 'Product Management Pro',
+    domain: 'Product',
+    duration: '20 weeks',
+    format: 'Hybrid',
+    level: 'Intermediate',
+    price: '₹85,000',
+    outcomes: ['Discovery', 'Roadmapping', 'Metrics & Growth'],
+    rating: 4.6,
+  },
+  {
+    id: 'p5',
+    name: 'Fintech Innovation Lab',
+    domain: 'Fintech',
+    duration: '14 weeks',
+    format: 'Live Online',
+    level: 'Advanced',
+    price: '₹1,05,000',
+    outcomes: ['Payments', 'RegTech', 'Blockchain basics'],
+    rating: 4.5,
+  },
+  {
+    id: 'p6',
+    name: 'Digital Transformation',
+    domain: 'Digital',
+    duration: '10 weeks',
+    format: 'Hybrid',
+    level: 'All levels',
+    price: '₹55,000',
+    outcomes: ['Change frameworks', 'Tech adoption', 'Culture shift'],
+    rating: 4.4,
+  },
+];
+
+// 6. Learning Path Builder modules
+export const learningModules = [
+  { id: 'm1', title: 'Foundations of Leadership', weeks: 2, category: 'Leadership' },
+  { id: 'm2', title: 'Strategic Decision Making', weeks: 3, category: 'Leadership' },
+  { id: 'm3', title: 'People Management Essentials', weeks: 2, category: 'Leadership' },
+  { id: 'm4', title: 'Python for Data Science', weeks: 4, category: 'Tech' },
+  { id: 'm5', title: 'Machine Learning Basics', weeks: 4, category: 'Tech' },
+  { id: 'm6', title: 'SQL & Analytics', weeks: 2, category: 'Tech' },
+  { id: 'm7', title: 'Prompt Engineering', weeks: 2, category: 'AI' },
+  { id: 'm8', title: 'Building LLM Apps', weeks: 3, category: 'AI' },
+  { id: 'm9', title: 'Agentic AI Workflows', weeks: 3, category: 'AI' },
+  { id: 'm10', title: 'Product Discovery', weeks: 2, category: 'Product' },
+  { id: 'm11', title: 'Roadmapping & Prioritization', weeks: 2, category: 'Product' },
+  { id: 'm12', title: 'Growth & Metrics', weeks: 3, category: 'Product' },
 ];
 
 export const footerLinks = {
