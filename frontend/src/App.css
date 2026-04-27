@@ -1,0 +1,27 @@
+/* App-specific global overrides */
+.App {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Button transitions – never universal */
+button {
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+/* Section spacing helper */
+.section-pad {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
